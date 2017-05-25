@@ -197,7 +197,7 @@
       function processNext(font) {
         // TODO: This could benefit from caching.
         var oReq = new XMLHttpRequest();
-        oReq.addEventListener('load', fontLoaded);
+        oReq.addEventListener('load', setTimeout.bind(this, fontLoaded, 300));
         oReq.addEventListener('error', transferFailed);
         oReq.addEventListener('abort', transferFailed);
         oReq.open('GET', font.url);
