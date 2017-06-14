@@ -51,7 +51,8 @@
             ctx.drawImage(img, 0, 0);
             image.setAttributeNS("http://www.w3.org/1999/xlink", "href", canvas.toDataURL('image/png'));
             left--;
-            checkDone();
+
+            setTimeout(checkDone, 100);
           }
           img.onerror = function() {
             console.log("Could not load "+href);
